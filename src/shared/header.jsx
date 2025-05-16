@@ -21,4 +21,13 @@ function Header() {
         </ul>
 </header>
 
-export default Header;
+export default Header 
+
+const Header = ({user, setUser}) => {
+  return (
+    <nav>
+      <h1>My App</h1>
+      {/* Add nav links, user info, logout button, etc. */}
+    </nav>
+  )
+};
