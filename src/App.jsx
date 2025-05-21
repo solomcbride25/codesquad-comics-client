@@ -1,14 +1,13 @@
-import About from "./components/untitled folder/About";
-import Admin from "./components/untitled folder/Admin";
-import Create from "./components/untitled folder/Create";
-import Home from "./components/untitled folder/Home";
-import Login from "./components/untitled folder/Login";
-import Signup from "./components/untitled folder/Signup";
-import Update from "./components/untitled folder/Update";
-import Header from "./shared/Header";
-import Footer from "./shared/Footer";
+
 /*import use state*/
 import { useEffect, useState } from "react";
+import { Route, Routes } from "react-router-dom";
+import Home from "./components/Home";
+import About from "./components/About";
+import Admin from "./components/Admin";
+import Create from "./components/Create";
+import Signup from "./components/Signup";
+import Update from "./components/Update";
 
 function App() {
   /*create new set for user */
@@ -23,11 +22,21 @@ function App() {
     }
   }, [user]);
 
+  //test route error
   return (
     <div className="App">
       <div>
         <Header user={user} setUser={setUser} />
-        <About />
+        <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/about" element={<About/>}/>
+          <Route path="/admin" element={<Admin/>}/>
+          <Route path="/create" element={<Create/>}/>
+          <Route path="/login" element={<Login/>}/>
+          <Route path="/signup" element={<Signup/>}/>
+          <Route path="/update" element={<Update/>}/>
+        </Routes>
+       {/* ??\\ <About />
         <Admin />
         <Create />
         <Home />
@@ -35,7 +44,7 @@ function App() {
         <Signup user={user} setUser={setUser} />
         <Update />
         <Footer />
-        <Header />
+        <Header /> */}
       </div>
     </div>
   );

@@ -1,14 +1,41 @@
-import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Create = () => {
+  const navigate = useNavigate();
   const handleCreate = (e) => {
     e.preventDefault();
     console.log("Create form submitted!");
 
-    console.log("Title:", e.target.title.value);
-    console.log("Author:", e.target.author.value);
-    console.log("Genre:", e.target.genre.value);
-    console.log("Year", e.target.year.value);
+    const body = {
+      title: e.target.title.value,
+      author: e.target.author.value,
+      genre: e.target.genre.value,
+      year: e.target.year.value,
+    };
+
+    fetch(
+      "https://course-project-codesquad-comics-server.onrender.com/api/books/create",
+      {
+        method: "post",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(body),
+      }
+    )
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to submit the book");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log("Book submitted successfully:", data);
+        navigate("/admin");
+      })
+      .catch((error) => {
+        console.error("Submission error:", error);
+      });
   };
 
   return (
@@ -43,12 +70,12 @@ const Create = () => {
           </select>
         </div>
         <div>
-        <label htmlFor="pages">Number of pages:</label>
-        <input type="number" id="pages" name="pages" />
+          <label htmlFor="pages">Number of pages:</label>
+          <input type="number" id="pages" name="pages" />
         </div>
-        <div> 
-        <label htmlFor="rating">Rating:</label>
-        <input type="number" id="rating" name="rating" />
+        <div>
+          <label htmlFor="rating">Rating:</label>
+          <input type="number" id="rating" name="rating" />
         </div>
         <label htmlFor="synopsis">Synopsis:</label>
         <textarea id="synopsis" name="synopsis">

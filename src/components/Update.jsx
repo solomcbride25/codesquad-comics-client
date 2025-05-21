@@ -1,17 +1,70 @@
 import React, { useEffect, useState } from "react";
-import { booksData } from "../../data/books";
+import { booksData } from "../data/books";
+import { useParams } from "react-router-dom";
 
 export default Update;
 
 const Update = () => {
-  const id = 2;
+  const { bookId } = useParams();
   const [book, setBook] = useState({});
 
   useEffect(() => {
     const foundBook = booksData.find((b) => b.id === id);
     setBook(foundBook || {});
+
+    fetch(`https://course-project-codesquad-comics-server.onrender.com/api/books/${bookId}`, {
+      method: 'GET',
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Login failed');
+        }
+        console.error()
+
+      .then((data) => {
+        console.log('Login successful:', data);
+        setUser(data);
+        navigate('/admin');
+      })
+      .catch((error) => {
+        console.error('Login error:', error);
+      });
+  });
   }, []);
 
+  function handleFormSubmit(event) {
+    event.preventDefault(); // Prevents page refresh on form submission
+  
+    const form = event.target;
+    const body = {
+      title: form.title.value,
+      author: form.author.value,
+      genre: form.genre.value,
+      year: form.year.value
+    }
+
+      fetch (`https://course-project-codesquad-comics-server.onrender.com/api/books/edit/${bookId}`, {
+      method: 'PUT';
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Login failed');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log('Login successful:', data);
+        localStorage.setItem('user', JSON.stringify(data));
+        setUser(data);
+        navigate('/admin');
+      })
+      .catch((error) => {
+        console.error('Login error:', error);
+      });
+      
   return (
     <main>
       <div className="main_update">

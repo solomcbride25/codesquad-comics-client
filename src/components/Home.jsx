@@ -1,13 +1,29 @@
 import { useEffect, useState } from "react";
-import { booksData } from "../../data/books";
+import { booksData } from "../data/books";
 
 function Home() {
   const [books, setBooks] = useState([]);
 
   /* useeffect function */
   useEffect(() => {
-    setBooks(booksData);
-  }, []);
+
+    const fetchBooks = async () => {
+      fetch('https://course-project-codesquad-comics-server.onrender.com/api/books');
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error ('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then((data)
+      setBooks(data);
+    })
+    .catch((error) => {
+      console.error('Fetch error:', error);
+    });
+  };
+  
+  fetchBooks();
 
   return (
     <div>
@@ -41,6 +57,6 @@ function Home() {
       ))}
     </div>
   );
-}
+  
 
 export default Home;
