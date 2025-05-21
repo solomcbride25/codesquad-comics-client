@@ -43,14 +43,14 @@ function Home() {
       {books.map((book) => (
         <div className={book.className} key={book.id}>
           <section>
-            <a href="#">
+            <link to="#">
               <img src={`/images/${book.image}`} alt={book.title} />
-            </a>
+            </link>
             <p>
               {book.title} <br />
               by {book.author} <br />
               {book.stars} stars <br />
-              <a href="#">Details</a>
+              <link to="#">Details</link>
             </p>
           </section>
         </div>

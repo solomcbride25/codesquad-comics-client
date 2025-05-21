@@ -1,6 +1,7 @@
 // import { useState } from "react";
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Login({ user, setUser }) {
   const navigate = useNavigate();

@@ -15,6 +15,7 @@ const handeLogout = (e) => {
     .then()
     setUser({""});
     localStorage.removeItem("user");
+    navigate("/home")
   })
   .catch((error) => {
     console.error('Fetch error:', error);

@@ -17,14 +17,13 @@ function Footer() {
         <h3>LINKS</h3>
         <ul>
           <li>
-            <a href="#">Home</a>
+            <link to="#">Home</link>
           </li>
           <li>
-            <a href="#">About</a>
+            <link to="#">About</link>
           </li>
-
           <li>
-            <a href="#">Login</a>
+            <a href="#" onClick={handleLogout}>Logout</link>
           </li>
         </ul>
       </section>

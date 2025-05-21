@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { booksData } from "../data/books";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 export default Update;
 
 const Update = () => {
+  const navigate = useNavigate();
   const { bookId } = useParams();
   const [book, setBook] = useState({});
 
