@@ -1,0 +1,217 @@
+header ul {
+    display: flex; 
+    color: #FFFFFF;
+    align-items: center; 
+    padding: 10px 20px;
+    justify-content: space-between;
+    text-align: left;
+    
+}
+
+.card_top {
+    background-color:#063C5E;
+    align-items: center;
+    border: #FCCF14 solid 4px;
+    border-radius: 25px 25px 0px 0px;
+}
+
+.whole_card {
+    padding-top: 15px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 25px;
+    justify-content: space-around;
+}
+
+.card_top h2 {
+    color:#FCCF14;
+    margin-bottom: auto;
+}
+
+.card_top img {
+    width: 200px;
+    border: #FFFFFF solid 1px;
+    border-radius: 25px;
+    margin-bottom: 20px;
+
+}
+
+.card_bottom {
+    border: #FCCF14 solid 2px;
+    text-align: left;
+    border-radius: 0px 0px 25px 25px;
+    
+}
+
+.footer section {
+    color:#FCCF14;
+
+}
+
+header img {
+    width: 200px;
+}
+
+body {
+    border-bottom: 4px solid #FCCF14;
+    width: 100%; 
+    max-width: 100vw;
+    margin: 0;
+    background-color: #377ba6a1;
+    
+}
+
+.main_about h2 {
+    color: #063C5E;
+}
+
+.main_about ul {
+    text-align: left;
+    color: black;
+}
+
+.main_about, .main_admin, .main_create, .main_index, .main_login, .main_update {
+    display:inline-block;
+    border: #063C5E solid 2px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #FFFFFF;
+    width: 50%;
+}
+
+.comics section {
+    display:inline-block;
+    border: #063C5E solid 2px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #FFFFFF;
+    width: 50%;
+}
+
+main {
+    background-color: white;
+    text-align: center;
+    background-color: #377ba6a1;
+}
+
+main h1 {
+    color:#063C5E
+}
+
+td {
+    text-align: left;
+
+}
+
+.main_about {
+    border: black solid 2px;
+    margin: 20px;
+    padding: 20px; 
+}
+
+section h3 {
+    color: #FCCF14;
+}
+
+.comics img{
+    width: 200px;
+}
+
+.main_create label {
+    display: flexbox;
+    font-weight:100;
+    text-align: left;
+}
+
+.main_create textarea {
+  width: 75%;
+  padding: 10px;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+header {
+    background-color: hsl(203, 88%, 20%);
+    color: #FFFFFF; 
+
+}
+
+footer {
+    border: #FCCF14 solid 3px;
+    background-color: #063C5E;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: space-around;
+}
+
+footer ul {
+    color: #FFFFFF;
+    margin: auto;
+
+
+}
+
+tr, td {
+    border: 2px solid black;
+
+}
+
+.blackpanther, .hunter, .march, .parable, .twd, .watchmen {
+    background-color: rgb(215, 210, 210);
+}
+
+.edit_button {
+    background-color:#063C5E;
+    color: white;
+}
+                                          
+.delete_button, .submit {
+    background-color: #FCCF14;
+    color:#063C5E;
+}
+
+.edit_button, .delete_button {
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 3px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.add_button {
+    background-color: #FCCF14;
+    color: #063C5E;
+}
+
+
+th {
+    background-color: gray;
+}
+
+footer img {
+    width: 85px;
+    margin: auto;
+
+}
+
+section h3 {
+    color: #FCCF14;
+}
+
+a:link {
+    color: white
+}
+
+a:hover {
+    color: yellow;
+    font-weight: bold;
+}
+
+.Title, .Author, .Publisher, .Genre, .Number, .Rating, .Sypnosis {
+    font-weight: bold;
+    text-decoration: underline;
+    color:#063C5E;
+}
+
