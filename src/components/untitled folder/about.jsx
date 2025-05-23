@@ -1,11 +1,7 @@
 function About() {
-    return (
-      <div>About</div>
-    )
-  }
-
-  <main>
-    <div className="main_about">
+  return (
+    <main>
+      <div className="main_about">
         <h1>ABOUT CODESQUAD COMICS</h1>
         <p>
           CodeSquad Comics is a collection of graphic novels read by Solomon
@@ -27,6 +23,7 @@ function About() {
         </ul>
       </div>
     </main>
+  );
+}
 
 export default About;
-
