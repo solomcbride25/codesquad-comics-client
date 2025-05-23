@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { booksData } from "../../data/books";
+import booksData from "../data/books";
 
 function Home() {
   const [books, setBooks] = useState([]);
@@ -25,10 +25,10 @@ function Home() {
         </p>
       </div>
       {books.map((book) => (
-        <div className={book.className} key={book.id}>
+        <div className={book.className} key={book._id}>
           <section>
             <a href="#">
-              <img src={`/images/${book.image}`} alt={book.title} />
+              <img src={`/images/${book.imageUrl}`} alt={book.title} />
             </a>
             <p>
               {book.title} <br />

@@ -1,14 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { booksData } from "../../data/books";
-
-export default Update;
+import { useEffect, useState } from "react";
+import booksData from "../data/books";
 
 const Update = () => {
-  const id = 2;
+  const id = "66b62a49-a8de-4914-ab3f-49fe0554c08a";
   const [book, setBook] = useState({});
 
   useEffect(() => {
-    const foundBook = booksData.find((b) => b.id === id);
+    const foundBook = booksData.find((b) => b._id === id);
     setBook(foundBook || {});
   }, []);
 
@@ -24,7 +22,7 @@ const Update = () => {
           <br />
 
           <label htmlFor="author">Author:</label>
-          <input type="text" id="author" name="author" value={book.title} />
+          <input type="text" id="author" name="author" value={book.author} />
           <br />
           <br />
 
@@ -42,22 +40,24 @@ const Update = () => {
             <option value="Select">Select</option>
           </select>
           <div>
-          <label htmlFor="genre">Genre:</label>
-          <input type="text" id="genre" name="genre" />
+            <label htmlFor="genre">Genre:</label>
+            <input type="text" id="genre" name="genre" />
           </div>
           <div>
-          <label htmlFor="pages">Number of pages:</label>
-          <input type="number" id="pages" name="pages" />
+            <label htmlFor="pages">Number of pages:</label>
+            <input type="number" id="pages" name="pages" />
           </div>
           <div>
-          <label htmlFor="rating">Rating:</label>
-          <input type="number" id="rating" name="rating" />
+            <label htmlFor="rating">Rating:</label>
+            <input type="number" id="rating" name="rating" />
           </div>
           <div>
-          <label htmlFor="synopsis">Synopsis:</label>
-          <textarea id="synopsis" name="synopsis">
-            Synopsis value stored in database
-          </textarea>
+            <label htmlFor="synopsis">Synopsis:</label>
+            <textarea
+              id="synopsis"
+              name="synopsis"
+              defaultValue="Synopsis value stored in database"
+            />
           </div>
           <button type="button">Submit</button>
         </form>
@@ -65,3 +65,5 @@ const Update = () => {
     </main>
   );
 };
+
+export default Update;

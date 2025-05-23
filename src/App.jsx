@@ -1,10 +1,10 @@
-import About from "./components/untitled folder/About";
-import Admin from "./components/untitled folder/Admin";
-import Create from "./components/untitled folder/Create";
-import Home from "./components/untitled folder/Home";
-import Login from "./components/untitled folder/Login";
-import Signup from "./components/untitled folder/Signup";
-import Update from "./components/untitled folder/Update";
+import About from "./components/about";
+import Admin from "./components/admin";
+import Create from "./components/create";
+import Home from "./components/home";
+import Login from "./components/login";
+import Signup from "./components/signup";
+import Update from "./components/update";
 import Header from "./shared/Header";
 import Footer from "./shared/Footer";
 /*import use state*/
@@ -12,10 +12,7 @@ import { useEffect, useState } from "react";
 
 function App() {
   /*create new set for user */
-  const [user, setUser] = useState(() => {
-    const stored = localStorage.getItem("user");
-    return stored ? JSON.parse(stored) : {};
-  });
+  const [user, setUser] = useState(localStorage.getItem("user") || {});
 
   useEffect(() => {
     if (user && Object.keys(user).length) {
@@ -35,7 +32,6 @@ function App() {
         <Signup user={user} setUser={setUser} />
         <Update />
         <Footer />
-        <Header />
       </div>
     </div>
   );
