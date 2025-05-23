@@ -10,7 +10,10 @@ const Create = () => {
       title: e.target.title.value,
       author: e.target.author.value,
       genre: e.target.genre.value,
-      year: e.target.year.value,
+      publisher: e.target.publisher.value,
+      pages: e.target.pages.value,
+      rating: e.target.rating.value,
+      synopsis: e.target.synopsis.value,
     };
 
     fetch(
@@ -43,20 +46,20 @@ const Create = () => {
       <h2>Create a New Book </h2>
       <form onSubmit={handleCreate}>
         <div>
-          <label>Title:</label>
-          <input type="text" id="title" required />
+          <label htmlFor="title">Title:</label>
+          <input type="text" id="title" name="title" required />
         </div>
         <div>
-          <label>Author:</label>
-          <input type="text" id="author" required />
+          <label htmlFor="author">Author:</label>
+          <input type="text" id="author" name="author" required />
         </div>
         <div>
-          <label>Genre:</label>
-          <input type="text" id="genre" required />
+          <label htmlFor="genre">Genre:</label>
+          <input type="text" id="genre" name="genre" required />
         </div>
         <div>
           <label htmlFor="publisher">Publisher:</label>
-          <select id="publisher" defaultValue="Select">
+          <select id="publisher" name="publisher" defaultValue="Select">
             <option value="BOOM Box!">BOOM Box!</option>
             <option value="DC Comics">DC Comics</option>
             <option value="Harry N. Abrams">Harry N. Abrams</option>
@@ -78,9 +81,7 @@ const Create = () => {
           <input type="number" id="rating" name="rating" />
         </div>
         <label htmlFor="synopsis">Synopsis:</label>
-        <textarea id="synopsis" name="synopsis">
-          Synopsis
-        </textarea>
+        <textarea id="synopsis" name="synopsis" defaultValue="Synopsis" />
         <br />
         <button type="button">Submit</button>
       </form>

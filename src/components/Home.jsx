@@ -1,29 +1,26 @@
 import { useEffect, useState } from "react";
-import { booksData } from "../data/books";
 
 function Home() {
   const [books, setBooks] = useState([]);
 
   /* useeffect function */
   useEffect(() => {
-
     const fetchBooks = async () => {
-      fetch('https://course-project-codesquad-comics-server.onrender.com/api/books');
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error ('Network response was not ok');
-        }
-        return response.json();
-      })
-      .then((data)
-      setBooks(data);
-    })
-    .catch((error) => {
-      console.error('Fetch error:', error);
-    });
-  };
-  
-  fetchBooks();
+      fetch(
+        "https://course-project-codesquad-comics-server.onrender.com/api/books"
+      )
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.json();
+        })
+        .then((result) => setBooks(result.data.books))
+        .catch((error) => console.error("Fetch error:", error));
+    };
+
+    fetchBooks();
+  }, []);
 
   return (
     <div>
@@ -41,22 +38,22 @@ function Home() {
         </p>
       </div>
       {books.map((book) => (
-        <div className={book.className} key={book.id}>
+        <div className={book.className} key={book._id}>
           <section>
-            <link to="#">
-              <img src={`/images/${book.image}`} alt={book.title} />
-            </link>
+            <a href="#">
+              <img src={`/images/${book.imageUrl}`} alt={book.title} />
+            </a>
             <p>
               {book.title} <br />
               by {book.author} <br />
               {book.stars} stars <br />
-              <link to="#">Details</link>
+              <a href="#">Details</a>
             </p>
           </section>
         </div>
       ))}
     </div>
   );
-  
+}
 
 export default Home;

@@ -1,11 +1,11 @@
-function Footer() {
-  return (
-    <div>Footer</div>
-  )
-}
+import { Link } from "react-router-dom";
 
-<footer>
-  <section>
+function Footer() {
+  const handleLogout = () => {};
+
+  return (
+    <footer>
+      <section>
         <h3>VISIT US</h3>
         <p>
           CodeSquad Comics <br />
@@ -17,13 +17,15 @@ function Footer() {
         <h3>LINKS</h3>
         <ul>
           <li>
-            <link to="#">Home</link>
+            <Link to="#">Home</Link>
           </li>
           <li>
-            <link to="#">About</link>
+            <Link to="#">About</Link>
           </li>
           <li>
-            <a href="#" onClick={handleLogout}>Logout</link>
+            <Link href="#" onClick={handleLogout}>
+              Logout
+            </Link>
           </li>
         </ul>
       </section>
@@ -31,22 +33,30 @@ function Footer() {
         <h3>FOLLOW US</h3>
         <ul>
           <li>
-            <a href="#" target="_blank">Facebook</a>
+            <a href="#" target="_blank">
+              Facebook
+            </a>
           </li>
           <li>
-            <a href="#" target="_blank">Instagram</a>
+            <a href="#" target="_blank">
+              Instagram
+            </a>
           </li>
           <li>
-            <a href="#" target="_blank">Twitter</a>
+            <a href="#" target="_blank">
+              Twitter
+            </a>
           </li>
         </ul>
       </section>
       <section>
         <h3 className="product">A PRODUCT OF</h3>
         <a href="#" target="_blank">
-          <img src="public/images/CodeSquad-website-logo.png"/>
+          <img src="public/images/CodeSquad-logo.jpg" />
         </a>
       </section>
-</footer>
+    </footer>
+  );
+}
 
 export default Footer;
