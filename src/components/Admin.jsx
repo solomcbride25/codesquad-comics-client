@@ -15,11 +15,10 @@ function Admin() {
           }
           return response.json();
         })
-        .then((data) => setBooks(data))
-        .catch((error) => {
-          console.error("Fetch error:", error);
-        });
+        .then((result) => setBooks(result.data.books))
+        .catch((error) => console.error("Fetch error:", error));
     };
+
     fetchBooks();
   }, []);
 
@@ -51,18 +50,18 @@ function Admin() {
           <tr>
             <th>COMIC TITLE</th>
             <th>EDIT</th>
-            <button onClick={handleDelete}>DELETE</button>
+            <th>DELETE</th>
           </tr>
         </thead>
         <tbody>
           {books.map((book) => (
-            <tr key={book.id}>
+            <tr key={book._id}>
               <td>{book.title}</td>
               <td>
-                <button className="edit_button">EDIT</button>
+                <Link to={`/update/${book._id}`} className="edit_button">EDIT</Link>
               </td>
               <td>
-                <button className="delete_button">DELETE</button>
+                <button className="delete_button"  onClick={()=>handleDelete(book._id)}>DELETE</button>
               </td>
             </tr>
           ))}
