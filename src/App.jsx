@@ -12,6 +12,7 @@ function App() {
   return (
   <div className="App">
       <div>
+        <Header/>
         <About/>
         <Admin/>
         <Create/>
@@ -20,7 +21,6 @@ function App() {
         <Signup/>
         <Update/>
         <Footer/>
-        <Header/>
       </div>
     </div>
   )
