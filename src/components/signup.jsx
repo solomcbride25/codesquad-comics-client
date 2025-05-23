@@ -1,5 +1,3 @@
-import React from "react";
-
 const Signup = () => {
   const handleSignup = (e) => {
     e.preventDefault();
@@ -13,18 +11,22 @@ const Signup = () => {
     return ( 
       <main>
       <div className="main_login">
-        <h1>LOGIN</h1>
+        <h1>SIGNUP</h1>
         <form onSubmit={handleSignup}>
           <div>
-            <label>First Name: </label>
+            <label htmlFor="firstName">First Name: </label>
             <input type="text" id="firstName" name="firstName" />
           </div>
+           <div>
+            <label htmlFor="lastName">First Name: </label>
+            <input type="text" id="lastName" name="lastName" />
+          </div>
           <div>
-            <label>Email Address: </label>;
+            <label htmlFor="email">Email Address: </label>;
             <input type="text" id="email" name="email" />;
           </div>
           <div>
-            <label>Password:</label>
+            <label htmlFor="password">Password:</label>
             <input type="password" id="password" name="password" />
           </div>
         </form>

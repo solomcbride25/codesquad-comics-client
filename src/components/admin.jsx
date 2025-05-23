@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import {booksData} from "../../data/books";
+import booksData from "../data/books";
 
 function Admin() {
   const [books, setBooks] = useState([]);
@@ -22,7 +22,7 @@ function Admin() {
         </thead>
         <tbody>
           {books.map((book) => (
-            <tr key={book.id}>
+            <tr key={book._id}>
               <td>{book.title}</td>
               <td>
                 <button className="edit_button">EDIT</button>

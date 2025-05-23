@@ -1,5 +1,3 @@
-import React from "react";
-
 const Create = () => {
   const handleCreate = (e) => {
     e.preventDefault();
@@ -43,17 +41,18 @@ const Create = () => {
           </select>
         </div>
         <div>
-        <label htmlFor="pages">Number of pages:</label>
-        <input type="number" id="pages" name="pages" />
+          <label htmlFor="pages">Number of pages:</label>
+          <input type="number" id="pages" name="pages" />
         </div>
-        <div> 
-        <label htmlFor="rating">Rating:</label>
-        <input type="number" id="rating" name="rating" />
+        <div>
+          <label htmlFor="rating">Rating:</label>
+          <input type="number" id="rating" name="rating" />
         </div>
         <label htmlFor="synopsis">Synopsis:</label>
-        <textarea id="synopsis" name="synopsis">
-          Synopsis
-        </textarea>
+        <textarea
+          id="synopsis"
+          name="synopsis"
+        />
         <br />
         <button type="button">Submit</button>
       </form>
